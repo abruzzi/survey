@@ -1,5 +1,3 @@
-import * as types from '../constants';
-
 const initState = [
   {
     id: 'q1',
@@ -28,12 +26,7 @@ const initState = [
 ];
 
 const survey = (state = initState, action) => {
-  switch (action.type) {
-    case types.ANSWER_QUESTION:
-      return state;
-    default:
-      return state;
-  }
+  return state;
 };
 
 export default survey;

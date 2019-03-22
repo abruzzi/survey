@@ -6,13 +6,15 @@ import Label from './Label'
 class TextField extends React.Component {
   state = {
     value: this.props.value || ''
-  }
+  };
 
   handleChange = (e) => {
-    const {onChange = () => {}} = this.props;
+    const {id, onChange = () => {}} = this.props;
+    const value = e.target.value;
+
     this.setState({
-      value: e.target.value
-    }, onChange(e.target.value))
+      value
+    }, () => onChange(id, value))
   };
 
   render() {

@@ -2,9 +2,8 @@ import React from 'react';
 import {Col, Row} from 'antd';
 
 import styled from 'styled-components';
-import TextField from "./components/TextField";
-import QuestionAndAnswers from "./components/QuestionAndAnswers";
 import connect from "react-redux/es/connect/connect";
+import {link} from "./components/InputFields";
 
 const Container = styled.div`
   max-width: 800px;
@@ -12,12 +11,7 @@ const Container = styled.div`
 `;
 
 const InputField = ({field}) => {
-  const inputFieldMap = {
-    text: (question) => (<TextField label={question.question} placeholder={question.question} />),
-    radio: (question) => (<QuestionAndAnswers question={question.question} answers={question.answers} onChange={() => {}}/>)
-  };
-
-  return inputFieldMap[field.type](field);
+  return link(field);
 };
 
 const App = ({survey}) => {

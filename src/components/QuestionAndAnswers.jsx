@@ -11,15 +11,16 @@ class QuestionAndAnswers extends React.Component {
   };
 
   handleChange = (e) => {
-    const {onChange = () => {}} = this.props;
+    const {id, onChange = () => {}} = this.props;
+    const value = e.target.value;
 
     this.setState({
-      value: e.target.value
-    }, onChange(e.target.value));
+      value
+    }, () => onChange(id, value))
   };
 
   render() {
-    const { value, question, answers = []} = this.props;
+    const { question, answers = []} = this.props;
     return (
       <div>
         <Label text={question} />
