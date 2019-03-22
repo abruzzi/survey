@@ -30,7 +30,11 @@ const App = () => {
       </Col>
 
       <Col span={24}>
-        <QuestionAndAnswers question={qna.question} answers={qna.answers} />
+        <QuestionAndAnswers
+          question={qna.question}
+          answers={qna.answers}
+          onChange={() => {}}
+        />
       </Col>
     </Row>
   </Container>);
