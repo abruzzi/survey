@@ -3,6 +3,7 @@ import {Col, Row} from 'antd';
 
 import styled from 'styled-components';
 import TextField from "./components/TextField";
+import QuestionAndAnswers from "./components/QuestionAndAnswers";
 
 const Container = styled.div`
   max-width: 800px;
@@ -10,6 +11,14 @@ const Container = styled.div`
 `;
 
 const App = () => {
+  const qna = {
+    question: 'How are you?',
+    answers: [
+      { label: 'I am great', value: 'great'},
+      { label: 'Not too bad', value: 'not-bad'}
+    ]
+  };
+
   return (<Container>
     <Row>
       <Col span={24}>
@@ -18,6 +27,10 @@ const App = () => {
 
       <Col span={24}>
         <TextField label="Address" placeholder="And you live in"/>
+      </Col>
+
+      <Col span={24}>
+        <QuestionAndAnswers question={qna.question} answers={qna.answers} />
       </Col>
     </Row>
   </Container>);
