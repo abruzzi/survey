@@ -4,33 +4,12 @@ import {Col, Row} from 'antd';
 import styled from 'styled-components';
 import TextField from "./components/TextField";
 import QuestionAndAnswers from "./components/QuestionAndAnswers";
+import connect from "react-redux/es/connect/connect";
 
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
 `;
-
-const survey = [
-  {
-    id: 'q1',
-    type: 'text',
-    question: 'What is your name?',
-  },
-  {
-    id: 'q2',
-    type: 'text',
-    question: 'What is your address?',
-  },
-  {
-    id: 'q3',
-    type: 'radio',
-    question: 'How are you?',
-    answers: [
-      { label: 'I am great', value: 'great'},
-      { label: 'Not too bad', value: 'not-bad'}
-    ]
-  }
-];
 
 const InputField = ({field}) => {
   const inputFieldMap = {
@@ -41,7 +20,7 @@ const InputField = ({field}) => {
   return inputFieldMap[field.type](field);
 };
 
-const App = () => {
+const App = ({survey}) => {
   return (<Container>
     <Row>
       {
@@ -55,4 +34,8 @@ const App = () => {
   </Container>);
 };
 
-export default App;
+const mapStateToProps = (state) => ({
+  survey: state.survey
+});
+
+export default connect(mapStateToProps)(App);

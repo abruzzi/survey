@@ -3,12 +3,27 @@ import {Input} from 'antd';
 
 import Label from './Label'
 
-const TextField = ({label, placeholder=''}) => {
-  return (
-    <div>
-      <Label text={label} />
-      <Input placeholder={placeholder} />
-    </div>)
+class TextField extends React.Component {
+  state = {
+    value: this.props.value || ''
+  }
+
+  handleChange = (e) => {
+    const {onChange = () => {}} = this.props;
+    this.setState({
+      value: e.target.value
+    }, onChange(e.target.value))
+  };
+
+  render() {
+    const {label, placeholder=''} = this.props;
+
+    return (
+      <div>
+        <Label text={label} />
+        <Input placeholder={placeholder} onChange={this.handleChange} value={this.state.value} />
+      </div>)
+  }
 }
 
 export default TextField;
