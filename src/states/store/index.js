@@ -30,6 +30,15 @@ const initialStore = {
       type: 'text',
       question: 'What is your phone number?',
     },
+    {
+      id: 'q5',
+      type: 'radio',
+      question: 'Do you work',
+      answers: [
+        {label: 'Yes, I am currently employed', value: 'employed'},
+        {label: 'No', value: 'no'}
+      ]
+    },
   ]
 };
 
