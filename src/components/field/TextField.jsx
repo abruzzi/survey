@@ -22,7 +22,7 @@ class TextField extends React.Component {
 
     return (
       <div>
-        <Label text={label} />
+        {label && <Label text={label} />}
         <Input placeholder={placeholder} onChange={this.handleChange} value={this.state.value} />
       </div>)
   }
