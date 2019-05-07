@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {answer} from "../states/actions";
 
 const mapStateToProps = (state) => ({
-  answers: state.answers
+  answers: state.app.answers
 });
 
 const withAdrenaline = (Component) => {
@@ -18,7 +18,7 @@ const withAdrenaline = (Component) => {
       question: survey.question,
       answers: survey.answers,
       options: survey.options,
-      onChange: answer,
+      onChange: (id, value) => answer(id, value, answers),
       value: answers[survey.id]
     };
 

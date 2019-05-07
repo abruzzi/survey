@@ -1,3 +1,3 @@
 import { createSelector } from 'reselect'
 
-const displayQuestionsSelector = state => state.displayQuestions;
+const surveySelector = state => state.survey;

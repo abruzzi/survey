@@ -1,0 +1,123 @@
+[
+  {
+    "id": "q1",
+    "type": "text",
+    "question": "What is your name?",
+    "next": "q2"
+  },
+  {
+    "id": "q2",
+    "type": "radio",
+    "question": "Are you a PS?",
+    "answers": [
+      {
+        "label": "Yes",
+        "value": "yes",
+        "next": "q3"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ]
+  },
+  {
+    "id": "q3",
+    "type": "radio",
+    "question": "What is your role?",
+    "answers": [
+      {
+        "label": "PM",
+        "value": "pm"
+      },
+      {
+        "label": "BA",
+        "value": "ba"
+      },
+      {
+        "label": "QA",
+        "value": "qa",
+        "next": "q4"
+      },
+      {
+        "label": "Dev",
+        "value": "dev",
+        "next": "q5"
+      }
+    ]
+  },
+  {
+    "id": "q4",
+    "type": "dropdown",
+    "question": "What is your favorite automation tool",
+    "options": [
+      {
+        "label": "Selenium",
+        "value": "selenium"
+      },
+      {
+        "label": "Cypress",
+        "value": "cypress"
+      }
+    ]
+  },
+  {
+    "id": "q5",
+    "type": "radio",
+    "question": "What is your field?",
+    "answers": [
+      {
+        "label": "Frontend ",
+        "value": "frontend",
+        "next": "q6"
+      },
+      {
+        "label": "Backend",
+        "value": "backend",
+        "next": "q7"
+      }
+    ]
+  },
+  {
+    "id": "q6",
+    "type": "dropdown",
+    "question": "Your favorite framework / library",
+    "options": [
+      {
+        "label": "React",
+        "value": "react"
+      },
+      {
+        "label": "Angular",
+        "value": "angular"
+      },
+      {
+        "label": "Other",
+        "value": "other"
+      }
+    ]
+  },
+  {
+    "id": "q7",
+    "type": "dropdown",
+    "question": "Your favorite framework / library",
+    "options": [
+      {
+        "label": "Spring",
+        "value": "spring"
+      },
+      {
+        "label": "Akka",
+        "value": "akka"
+      },
+      {
+        "label": "RoR",
+        "value": "ror"
+      },
+      {
+        "label": "other",
+        "value": "other"
+      }
+    ]
+  }
+]

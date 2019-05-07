@@ -37,7 +37,7 @@ const App = ({survey}) => {
 };
 
 const mapStateToProps = (state) => ({
-  survey: state.survey
+  survey: state.displaying
 });
 
 export default connect(mapStateToProps)(App);

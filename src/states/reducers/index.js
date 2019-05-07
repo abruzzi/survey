@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import survey from './survey';
-import answers from './answers';
+
+import app from './app';
+import displaying from './displaying'
 
 export default combineReducers({
-  survey,
-  answers
+  app,
+  displaying
 });
