@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from "./TextField";
 import QuestionAndAnswers from "./QuestionAndAnswers";
+import Dropdown from "./Dropdown";
 import {connect} from "react-redux";
 import {answer} from "../states/actions";
 
@@ -16,6 +17,7 @@ const withAdrenaline = (Component) => {
       placeholder: survey.question,
       question: survey.question,
       answers: survey.answers,
+      options: survey.options,
       onChange: answer,
       value: answers[survey.id]
     };
@@ -28,10 +30,12 @@ const withAdrenaline = (Component) => {
 
 const ConnectedTextField = withAdrenaline(TextField);
 const ConnectedQuestionAndAnswers = withAdrenaline(QuestionAndAnswers);
+const ConnectedDropdown = withAdrenaline(Dropdown);
 
 const inputFieldsMap = {
   text: ConnectedTextField,
   radio: ConnectedQuestionAndAnswers,
+  dropdown: ConnectedDropdown
 };
 
 const link = (survey) => {

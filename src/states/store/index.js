@@ -39,6 +39,15 @@ const initialStore = {
         {label: 'No', value: 'no'}
       ]
     },
+    {
+      id: 'q6',
+      type: 'dropdown',
+      question: 'How old are you?',
+      options: [
+        {label: '1', value: '1'},
+        {label: '2', value: '2'}
+      ]
+    }
   ]
 };
 
