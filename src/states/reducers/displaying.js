@@ -7,6 +7,10 @@ const questionById = id => _.find(survey, s => s.id === id);
 const next = (id, value) => {
   const current = _.find(survey, s => s.id === id);
 
+  if(!current || !value) {
+    return null;
+  }
+
   switch(current.type) {
     case 'text': {
       return current.next;
@@ -20,13 +24,13 @@ const next = (id, value) => {
   }
 };
 
-const nextIds = (id, value) => {
+const nextIds = (id, value, answers) => {
   const ids = [];
 
-  const nextId = next(id, value);
-
-  if(nextId) {
+  let nextId = next(id, value);
+  while(nextId) {
     ids.push(nextId);
+    nextId = next(nextId, answers[nextId]);
   }
 
   return ids;

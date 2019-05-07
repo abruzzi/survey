@@ -19,18 +19,19 @@ class Dropdown extends React.Component {
 
 
   render() {
-    const {options, label, placeholder=''} = this.props;
+    const {id, options, label, placeholder=''} = this.props;
 
     return (
       <div>
         <Label text={label} />
         <div>
           <Select
+            id={id}
             style={{ width: '100%' }}
             placeHolder={placeholder}
-            optionFilterProp="children"
             onChange={this.handleChange}
             defaultValue={this.state.value}
+            value={this.state.value}
           >
             {options.map((option, index) => <Option key={index} value={option.value}>{option.label}</Option>)}
           </Select>

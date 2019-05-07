@@ -81,7 +81,7 @@
   {
     "id": "q6",
     "type": "dropdown",
-    "question": "Your favorite framework / library",
+    "question": "Your favorite frontend framework / library",
     "options": [
       {
         "label": "React",
@@ -100,7 +100,7 @@
   {
     "id": "q7",
     "type": "dropdown",
-    "question": "Your favorite framework / library",
+    "question": "Your favorite backend framework / library",
     "options": [
       {
         "label": "Spring",
