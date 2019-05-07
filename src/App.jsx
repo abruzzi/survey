@@ -3,19 +3,27 @@ import {Col, Row} from 'antd';
 
 import styled from 'styled-components';
 import connect from "react-redux/es/connect/connect";
-import {link} from "./components/InputFields";
+import {createField} from "./components/inputFieldFactory";
 
 const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
+  
+  h2 {
+    padding-top: 20px;
+    text-transform: uppercase;
+  }
 `;
 
 const InputField = ({field}) => {
-  return link(field);
+  return createField(field);
 };
 
 const App = ({survey}) => {
   return (<Container>
+    <Row>
+      <h2>Tell me more</h2>
+    </Row>
     <Row>
       {
         survey.map((s, index) => (

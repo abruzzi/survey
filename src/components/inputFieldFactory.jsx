@@ -1,7 +1,7 @@
 import React from 'react';
-import TextField from "./TextField";
-import QuestionAndAnswers from "./QuestionAndAnswers";
-import Dropdown from "./Dropdown";
+import TextField from "./field/TextField";
+import QuestionAndAnswers from "./field/QuestionAndAnswers";
+import Dropdown from "./field/Dropdown";
 import {connect} from "react-redux";
 import {answer} from "../states/actions";
 
@@ -38,9 +38,9 @@ const inputFieldsMap = {
   dropdown: ConnectedDropdown
 };
 
-const link = (survey) => {
+const createField = (survey) => {
   const component = inputFieldsMap[survey.type];
   return React.createElement(component, {survey});
 };
 
-export {link}
+export {createField}

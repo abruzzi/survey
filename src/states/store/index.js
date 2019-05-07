@@ -10,42 +10,65 @@ const initialStore = {
       id: 'q1',
       type: 'text',
       question: 'What is your name?',
+      next: 'q2',
     },
     {
       id: 'q2',
-      type: 'text',
-      question: 'What is your address?',
+      type: 'radio',
+      question: 'Are you a PS?',
+      answers: [
+        {label: 'Yes', value: 'yes', next: 'q3'},
+        {label: 'No', value: 'no', next: undefined}
+      ]
     },
     {
       id: 'q3',
       type: 'radio',
-      question: 'How are you?',
+      question: 'What is your role?',
       answers: [
-        {label: 'I am great', value: 'great'},
-        {label: 'Not too bad', value: 'not-bad'}
+        {label: 'PM', value: 'pm', next: undefined},
+        {label: 'BA', value: 'ba', next: undefined},
+        {label: 'QA', value: 'qa', next: 'q4'},
+        {label: 'Dev', value: 'dev', next: 'q5'},
       ]
     },
     {
       id: 'q4',
-      type: 'text',
-      question: 'What is your phone number?',
+      type: 'dropdown',
+      question: 'What is your favorite automation tool',
+      options: [
+        {label: 'Selenium', value: 'selenium', next: undefined},
+        {label: 'Cypress', value: 'cypress', next: undefined}
+      ]
     },
     {
       id: 'q5',
       type: 'radio',
-      question: 'Do you work',
+      question: 'What is your field?',
       answers: [
-        {label: 'Yes, I am currently employed', value: 'employed'},
-        {label: 'No', value: 'no'}
+        {label: 'Frontend ', value: 'frontend', next: 'q6'},
+        {label: 'Backend', value: 'backend', next: 'q7'}
       ]
     },
     {
       id: 'q6',
       type: 'dropdown',
-      question: 'How old are you?',
+      question: 'Your favorite framework / library',
       options: [
-        {label: '1', value: '1'},
-        {label: '2', value: '2'}
+        {label: 'React', value: 'react', next: undefined},
+        {label: 'Angular', value: 'angular', next: undefined},
+        {label: 'Other', value: 'other', next: undefined}
+      ]
+    },
+    {
+      id: 'q7',
+      type: 'dropdown',
+      question: 'Your favorite framework / library',
+      options: [
+        {label: 'Spring', value: 'spring', next: undefined},
+        {label: 'Akka', value: 'akka', next: undefined},
+        {label: 'RoR', value: 'ror', next: undefined},
+        {label: 'other', value: 'other', next: undefined}
       ]
     }
   ]
