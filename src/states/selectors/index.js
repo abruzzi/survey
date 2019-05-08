@@ -9,3 +9,9 @@ export const checkCompleteness = createSelector(
     return _.every(displaying, q => answers[q.id])
   }
 );
+
+const experienceSelector = state => state.experience;
+
+export const deletableSelector = createSelector(
+  [experienceSelector], experience => experience.length > 1
+);

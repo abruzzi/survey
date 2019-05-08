@@ -1,34 +1,10 @@
 import React from "react";
-import {Row, Col, Button} from 'antd';
-import TextField from "../components/field/TextField";
+import {Row, Button} from 'antd';
 import styled from "styled-components";
+import {connect} from "react-redux";
+import {addExperience} from "../states/actions";
 
-const StyledRow = styled(Row)`
-  padding: 20px 0;
-`;
-
-class HistoryItem extends React.Component {
-  updateField = () => {}
-
-  render () {
-    const {name, period, stack} = this.props;
-
-    return (<StyledRow gutter={16}  type="flex" justify="center" align="middle">
-      <Col span={6}>
-        <TextField value={name} onChange={this.updateField} placeholder="Last First" />
-      </Col>
-      <Col span={6}>
-        <TextField value={period} onChange={this.updateField} placeholder="10 months" />
-      </Col>
-      <Col span={6}>
-        <TextField value={stack} onChange={this.updateField} placeholder="JavaScript" />
-      </Col>
-      <Col span={6}>
-        <Button type="danger" shape="circle" icon="delete" />
-      </Col>
-    </StyledRow>)
-  }
-};
+import Experience from './Experience';
 
 const Container = styled.div`
   max-width: 800px;
@@ -40,16 +16,19 @@ const Container = styled.div`
   }
 `;
 
-const History = () => {
+const History = ({experience, addExperience}) => {
   return (<Container>
-    {[
-      {name: 'ABC', period: '10 months', stack: 'JavaScript'}
-    ].map(history => <HistoryItem {...history} />)}
+    <h2>Work experience</h2>
+    {experience.map(expr => <Experience key={expr.id} {...expr} />)}
     <Row>
-      <Button type="primary">Add more</Button>
+      <Button type="primary" onClick={addExperience}>Add Experience</Button>
     </Row>
   </Container>);
 }
 
-export default History;
+const mapStateToProps = state => ({
+  experience: state.experience,
+});
+
+export default connect(mapStateToProps, { addExperience })(History);
 

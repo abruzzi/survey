@@ -3,7 +3,7 @@ import TellMeMore from "./pages/TellMeMore";
 import History from "./pages/ExperienceForm";
 
 const App = () => {
-  return (<TellMeMore />);
+  return (<History />);
 };
 
 export default App;
