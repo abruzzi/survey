@@ -10,7 +10,7 @@ const StyledRow = styled(Row)`
   padding: 16px 0;
 `;
 
-class Experience extends React.Component {
+class ExperienceForm extends React.Component {
 
   updateField = (field) => (_, value) => {
     console.log(value);
@@ -53,4 +53,4 @@ const mapStateToProps = state => ({
   deletable: deletableSelector(state)
 });
 
-export default connect(mapStateToProps, {updateField, removeItem})(Experience);
+export default connect(mapStateToProps, {updateField, removeItem})(ExperienceForm);

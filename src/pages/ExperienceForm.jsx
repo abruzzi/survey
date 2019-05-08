@@ -16,7 +16,7 @@ const Container = styled.div`
   }
 `;
 
-const History = ({experience, addExperience}) => {
+const ExperienceForm = ({experience, addExperience}) => {
   return (<Container>
     <h2>Work experience</h2>
     {experience.map(expr => <Experience key={expr.id} {...expr} />)}
@@ -30,5 +30,5 @@ const mapStateToProps = state => ({
   experience: state.experience,
 });
 
-export default connect(mapStateToProps, { addExperience })(History);
+export default connect(mapStateToProps, { addExperience })(ExperienceForm);
 

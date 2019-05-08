@@ -1,9 +1,9 @@
 import React from 'react';
 import TellMeMore from "./pages/TellMeMore";
-import History from "./pages/ExperienceForm";
+import ExperienceForm from "./pages/ExperienceForm";
 
 const App = () => {
-  return (<History />);
+  return (<ExperienceForm />);
 };
 
 export default App;
