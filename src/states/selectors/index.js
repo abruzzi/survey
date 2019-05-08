@@ -1,3 +1,11 @@
+import _ from 'lodash';
 import { createSelector } from 'reselect'
 
-const surveySelector = state => state.survey;
+const displaying = state => state.displaying;
+const answersSelector = state => state.app.answers;
+
+export const checkCompleteness = createSelector(
+  [displaying, answersSelector], (displaying, answers) => {
+    return _.every(displaying, q => answers[q.id])
+  }
+);

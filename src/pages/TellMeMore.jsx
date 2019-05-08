@@ -3,6 +3,7 @@ import React from "react";
 import connect from "react-redux/es/connect/connect";
 import {createField} from "../components/inputFieldFactory";
 import styled from "styled-components";
+import {checkCompleteness} from "../states/selectors";
 
 const Container = styled.div`
   max-width: 800px;
@@ -17,7 +18,7 @@ const InputField = ({field}) => {
   return createField(field);
 };
 
-const TellMeMore = ({survey}) => (
+const TellMeMore = ({survey, completed}) => (
   <Container>
     <h2>Tell me more</h2>
     <Row>
@@ -30,13 +31,14 @@ const TellMeMore = ({survey}) => (
       }
     </Row>
     <StyledRow>
-      <Button type="primary">Submit</Button>
+      <Button type="primary" disabled={!completed}>Submit</Button>
     </StyledRow>
   </Container>
 )
 
 const mapStateToProps = (state) => ({
-  survey: state.displaying
+  survey: state.displaying,
+  completed: checkCompleteness(state)
 });
 
 export default connect(mapStateToProps)(TellMeMore);
