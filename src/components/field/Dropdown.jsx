@@ -19,7 +19,7 @@ class Dropdown extends React.Component {
 
 
   render() {
-    const {id, options, label, placeholder=''} = this.props;
+    const {id, options, label, placeholder = ''} = this.props;
 
     return (
       <div>

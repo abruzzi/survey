@@ -6,8 +6,13 @@ import styled from "styled-components";
 import {checkCompleteness} from "../states/selectors";
 
 const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 20px auto;
+  
+  h2 {
+    margin: 0;
+    text-transform: uppercase;
+  }
 `;
 
 const StyledRow = styled(Row)`

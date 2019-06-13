@@ -18,12 +18,15 @@ class TextField extends React.Component {
   };
 
   render() {
-    const {label, placeholder=''} = this.props;
+    const {label, placeholder = '', value} = this.props;
 
     return (
       <div>
         {label && <Label text={label} />}
-        <Input placeholder={placeholder} onChange={this.handleChange} value={this.state.value} />
+        <Input
+          placeholder={placeholder}
+          onChange={this.handleChange}
+          value={value ? value : this.state.value} />
       </div>)
   }
 }

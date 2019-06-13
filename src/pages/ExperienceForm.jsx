@@ -21,7 +21,7 @@ const ExperienceForm = ({experience, addExperience}) => {
     <h2>Work experience</h2>
     {experience.map(expr => <Experience key={expr.id} {...expr} />)}
     <Row>
-      <Button type="primary" onClick={addExperience}>Add Experience</Button>
+      <Button type="primary" onClick={addExperience}>Add</Button>
     </Row>
   </Container>);
 }
